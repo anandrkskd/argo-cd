@@ -61,7 +61,7 @@ const AutoSyncFormField = ReactFormField((props: {fieldApi: FieldApi; className:
                 value={automated ? auto : manual}
                 options={[manual, auto]}
                 onChange={opt => {
-                    setValue(opt.value === auto ? {prune: false, selfHeal: false} : null);
+                    setValue(opt.value === auto ? {enable: true, prune: false, selfHeal: false} : null);
                 }}
             />
             {automated && (
@@ -69,12 +69,17 @@ const AutoSyncFormField = ReactFormField((props: {fieldApi: FieldApi; className:
                     <div className='checkbox-container'>
                         <Checkbox onChange={val => setValue({...automated, prune: val})} checked={!!automated.prune} id='policyPrune' />
                         <label htmlFor='policyPrune'>Prune Resources</label>
-                        <HelpIcon title='If checked, Argo will delete resources if they are no longer defined in Git' />
+                        <HelpIcon title='If checked, Argo will delete resources if they are no longer defined in Git'/>
                     </div>
                     <div className='checkbox-container'>
                         <Checkbox onChange={val => setValue({...automated, selfHeal: val})} checked={!!automated.selfHeal} id='policySelfHeal' />
                         <label htmlFor='policySelfHeal'>Self Heal</label>
                         <HelpIcon title='If checked, Argo will force the state defined in Git into the cluster when a deviation in the cluster is detected' />
+                    </div>
+                    <div className='checkbox-container'>
+                        <Checkbox onChange={val => setValue({...automated, enable: val})} checked={!!automated.enable} id='policyEnable'/>
+                        <label htmlFor='policyEnable'>Auto Sync</label>
+                        <HelpIcon title='When checked, Argo will enable the application auto Sync'/>
                     </div>
                 </div>
             )}

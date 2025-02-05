@@ -1846,6 +1846,9 @@ spec:
                         description: 'AllowEmpty allows apps have zero live resources
                           (default: false)'
                         type: boolean
+                      enable:
+                        description: Enable specifics
+                        type: boolean
                       prune:
                         description: 'Prune specifies whether to delete resources
                           from the cluster that are not found in the sources anymore
@@ -1856,6 +1859,8 @@ spec:
                           back to their desired state upon modification in the cluster
                           (default: false)'
                         type: boolean
+                    required:
+                    - enable
                     type: object
                   managedNamespaceMetadata:
                     description: ManagedNamespaceMetadata controls metadata in the

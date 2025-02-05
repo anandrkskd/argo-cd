@@ -1425,7 +1425,7 @@ type ManagedNamespaceMetadata struct {
 // SyncPolicy controls when a sync will be performed in response to updates in git
 type SyncPolicy struct {
 	// Automated will keep an application synced to the target revision
-	Automated *SyncPolicyAutomated `json:"automated,omitempty" protobuf:"bytes,1,opt,name=automated"`
+	Automated SyncPolicyAutomated `json:"automated,omitempty" protobuf:"bytes,1,opt,name=automated"`
 	// Options allow you to specify whole app sync-options
 	SyncOptions SyncOptions `json:"syncOptions,omitempty" protobuf:"bytes,2,opt,name=syncOptions"`
 	// Retry controls failed sync retry behavior
@@ -1437,7 +1437,7 @@ type SyncPolicy struct {
 
 // IsZero returns true if the sync policy is empty
 func (p *SyncPolicy) IsZero() bool {
-	return p == nil || (p.Automated == nil && len(p.SyncOptions) == 0 && p.Retry == nil && p.ManagedNamespaceMetadata == nil)
+	return p == nil || ((p.Automated.Enable == false && p.Automated.SelfHeal == false && p.Automated.Prune == false) && len(p.SyncOptions) == 0 && p.Retry == nil && p.ManagedNamespaceMetadata == nil)
 }
 
 // RetryStrategy contains information about the strategy to apply when a sync failed
@@ -1510,7 +1510,16 @@ type SyncPolicyAutomated struct {
 	SelfHeal bool `json:"selfHeal,omitempty" protobuf:"bytes,2,opt,name=selfHeal"`
 	// AllowEmpty allows apps have zero live resources (default: false)
 	AllowEmpty bool `json:"allowEmpty,omitempty" protobuf:"bytes,3,opt,name=allowEmpty"`
+	// Enable specifics
+	Enable bool `json:"enable" protobuf:"bytes,4,opt,name=enable"`
 }
+
+//// SetEnable sets value for enable field to true if automated field is present
+//func (p *SyncPolicyAutomated) SetEnable() {
+//	if p != nil {
+//		p.Enable = true
+//	}
+//}
 
 // SyncStrategy controls the manner in which a sync is performed
 type SyncStrategy struct {

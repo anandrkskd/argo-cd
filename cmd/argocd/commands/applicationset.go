@@ -2,13 +2,13 @@ package commands
 
 import (
 	"fmt"
+	"github.com/mattn/go-isatty"
+	"github.com/spf13/cobra"
 	"io"
 	"os"
 	"reflect"
 	"text/tabwriter"
 
-	"github.com/mattn/go-isatty"
-	"github.com/spf13/cobra"
 	"google.golang.org/grpc/codes"
 
 	"github.com/argoproj/argo-cd/v2/cmd/argocd/commands/admin"
@@ -459,7 +459,7 @@ func printAppSetSummaryTable(appSet *arogappsetv1.ApplicationSet) {
 		syncPolicyStr string
 		syncPolicy    = appSet.Spec.Template.Spec.SyncPolicy
 	)
-	if syncPolicy != nil && syncPolicy.Automated != nil {
+	if syncPolicy != nil && syncPolicy.Automated.Enable == true {
 		syncPolicyStr = "Automated"
 		if syncPolicy.Automated.Prune {
 			syncPolicyStr += " (Prune)"

@@ -659,10 +659,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -1331,10 +1335,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -2002,10 +2010,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -2653,10 +2665,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -3329,10 +3345,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -4001,10 +4021,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -4672,10 +4696,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -5323,10 +5351,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -5982,10 +6014,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -6860,10 +6896,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -7733,10 +7773,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -8401,10 +8445,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -9079,10 +9127,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -9751,10 +9803,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -10422,10 +10478,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -11073,10 +11133,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -11732,10 +11796,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -12610,10 +12678,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -13483,10 +13555,14 @@ spec:
                                                 properties:
                                                   allowEmpty:
                                                     type: boolean
+                                                  enable:
+                                                    type: boolean
                                                   prune:
                                                     type: boolean
                                                   selfHeal:
                                                     type: boolean
+                                                required:
+                                                - enable
                                                 type: object
                                               managedNamespaceMetadata:
                                                 properties:
@@ -14155,10 +14231,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -14813,10 +14893,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -15691,10 +15775,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -16564,10 +16652,14 @@ spec:
                                       properties:
                                         allowEmpty:
                                           type: boolean
+                                        enable:
+                                          type: boolean
                                         prune:
                                           type: boolean
                                         selfHeal:
                                           type: boolean
+                                      required:
+                                      - enable
                                       type: object
                                     managedNamespaceMetadata:
                                       properties:
@@ -17307,10 +17399,14 @@ spec:
                             properties:
                               allowEmpty:
                                 type: boolean
+                              enable:
+                                type: boolean
                               prune:
                                 type: boolean
                               selfHeal:
                                 type: boolean
+                            required:
+                            - enable
                             type: object
                           managedNamespaceMetadata:
                             properties:

@@ -287,6 +287,7 @@ export interface ApplicationSourceDirectory {
 }
 
 export interface Automated {
+    enable: boolean;
     prune: boolean;
     selfHeal: boolean;
 }

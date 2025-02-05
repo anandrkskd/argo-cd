@@ -1929,7 +1929,7 @@ func (s *Server) Sync(ctx context.Context, syncReq *application.ApplicationSyncR
 		if err := s.enf.EnforceErr(ctx.Value("claims"), rbacpolicy.ResourceApplications, rbacpolicy.ActionOverride, a.RBACName(s.ns)); err != nil {
 			return nil, err
 		}
-		if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated != nil && !syncReq.GetDryRun() {
+		if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated.Enable != false && !syncReq.GetDryRun() {
 			return nil, status.Error(codes.FailedPrecondition, "cannot use local sync when Automatic Sync Policy is enabled unless for dry run")
 		}
 	}
@@ -2025,7 +2025,7 @@ func (s *Server) resolveSourceRevisions(ctx context.Context, a *appv1.Applicatio
 			sources[pos-1].TargetRevision = syncReq.Revisions[i]
 		}
 		for index, source := range sources {
-			if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated != nil && !syncReq.GetDryRun() {
+			if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated.Enable != false && !syncReq.GetDryRun() {
 				if text.FirstNonEmpty(a.Spec.GetSources()[index].TargetRevision, "HEAD") != text.FirstNonEmpty(source.TargetRevision, "HEAD") {
 					return "", "", nil, nil, status.Errorf(codes.FailedPrecondition, "Cannot sync source %s to %s: auto-sync currently set to %s", source.RepoURL, source.TargetRevision, a.Spec.Sources[index].TargetRevision)
 				}
@@ -2040,7 +2040,7 @@ func (s *Server) resolveSourceRevisions(ctx context.Context, a *appv1.Applicatio
 		return "", "", sourceRevisions, displayRevisions, nil
 	} else {
 		source := a.Spec.GetSource()
-		if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated != nil && !syncReq.GetDryRun() {
+		if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated.Enable != false && !syncReq.GetDryRun() {
 			if syncReq.GetRevision() != "" && syncReq.GetRevision() != text.FirstNonEmpty(source.TargetRevision, "HEAD") {
 				return "", "", nil, nil, status.Errorf(codes.FailedPrecondition, "Cannot sync to %s: auto-sync currently set to %s", syncReq.GetRevision(), source.TargetRevision)
 			}
@@ -2064,7 +2064,7 @@ func (s *Server) Rollback(ctx context.Context, rollbackReq *application.Applicat
 	if a.DeletionTimestamp != nil {
 		return nil, status.Errorf(codes.FailedPrecondition, "application is deleting")
 	}
-	if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated != nil {
+	if a.Spec.SyncPolicy != nil && a.Spec.SyncPolicy.Automated.Enable != false {
 		return nil, status.Errorf(codes.FailedPrecondition, "rollback cannot be initiated when auto-sync is enabled")
 	}
 
